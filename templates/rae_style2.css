@@ -1285,7 +1285,8 @@ img {
     display: inline-block;
     margin-top: .357rem;
     margin-bottom: .357rem;
-    padding: 0
+    padding: 0;
+    border: 1px solid red;
 }
 
 .pkp_site_name .is_img:focus {
@@ -1297,7 +1298,7 @@ img {
     max-height: 2.143rem;
     max-width: 100%;
     width: auto;
-    height: auto
+    height: auto;
 }
 
 .pkp_site_name .is_text {

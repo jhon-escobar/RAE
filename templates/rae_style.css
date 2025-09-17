@@ -1181,8 +1181,17 @@ body {
     font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
     font-size: 14px;
     line-height: 1.43rem;
-    color: rgba(0, 0, 0, 0.87);
-    background: rgba(128, 94, 0, 0.106)
+    /* background-image: url("https://images.pexels.com/photos/5346860/pexels-photo-5346860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
+    /* background-image: url("https://img.freepik.com/fotos-premium/hierba-verde-planta-crecimiento-fondo-oscuro-como-simbolo-cultivo-campo_395451-1038.jpg"); */
+    /* background-image: url("https://img.freepik.com/fotos-premium/hojas-tropicales-sobre-fondo-negro_46250-2540.jpg"); */
+    background-image: url("../IMAGES/background_image_1.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: white;
+}
+
+html{
+    background: radial-gradient(circle at center, #2b1d0f 0%, #0d1f0d 40%,#000000 100%);
 }
 
 a {
@@ -1205,6 +1214,11 @@ a:focus {
     margin: 0 auto;
     padding-left: .714rem;
     padding-right: .714rem
+}
+
+.pkp_structure_content {
+    top: 120px;
+    backdrop-filter: blur(30px);
 }
 
 .pkp_site_name_wrapper:before,
@@ -1276,8 +1290,7 @@ a:focus {
 
 .pkp_head_wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .has_site_logo .pkp_head_wrapper {
@@ -1400,17 +1413,17 @@ img {
     height: auto
 }
 
-/* imagen del header */
+/* imagen en header */
 .pkp_structure_head {
-    background-image: url("https://www.uai.com.br/uainoticias/wp-content/uploads/2025/05/agricultura_1747252718898-1024x576.jpg");
+    background-color: rgba(0, 0, 0, 0.901);
+    /* background-image: url("https://www.uai.com.br/uainoticias/wp-content/uploads/2025/05/agricultura_1747252718898-1024x576.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-}
-
-.pkp_head_wrapper {
-    position: relative
+    height: 120px;
+    position: fixed;
+    z-index: 9999;
 }
 
 .pkp_site_name_wrapper {
@@ -1452,17 +1465,20 @@ img {
     display: inline-block;
     margin-top: .357rem;
     margin-bottom: .357rem;
-    padding: 0
+    padding: 0;
+    filter: brightness(80%);
+    transition: all 0.5s;
 }
 
-.pkp_site_name .is_img:focus {
-    outline: 1px solid #fff
+.pkp_site_name .is_img:hover {
+    filter: brightness(120%);
 }
 
 .pkp_site_name .is_img img {
     display: block;
     max-height: 2.143rem;
     max-width: 100%;
+    filter: drop-shadow(3px 5px 3px black);
     width: auto;
     height: auto
 }
@@ -1521,7 +1537,7 @@ img {
     height: 0
 }
 
-.pkp_navigation_user.pkp_navigation_user {
+.pkp_navigation_user .pkp_navigation_user {
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
@@ -1599,11 +1615,13 @@ img {
         display: block;
         position: static;
         top: auto;
+        background-color: rgba(0, 0, 0, 0.595);
+        border-radius: 18px;
         padding: 0
     }
 
     .pkp_site_nav_menu ul ul {
-        padding-left: 0
+        padding-left: 0;
     }
 
     .has_site_logo .pkp_head_wrapper {
@@ -1614,16 +1632,11 @@ img {
         margin: 0;
         padding: 0;
         list-style: none;
-        top: 0;
-        position: sticky;
     }
 
-    .pkp_nav_list li,
-    .is_img img {
+    .pkp_nav_list li {
         position: relative;
         display: inline-block;
-        background-color: rgba(93, 57, 0, 0.653);
-        border-radius: 20px 0 10px 0;
         padding: 0 2px;
     }
 
@@ -1649,7 +1662,7 @@ img {
         width: 15em;
         margin: 0;
         padding: 0;
-        background: #fff;
+        background: radial-gradient(circle at center, #2b1d0f 0%, #0d1f0d 40%,#000000 100%);
         border-radius: 3px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         transition: all 0.4s;
@@ -1664,15 +1677,16 @@ img {
         display: block;
         padding-left: .357rem;
         border-left: .357rem solid transparent;
-        color: #006798
+        transition: all 0.3s;
+        color: white
     }
 
     .pkp_nav_list ul a:hover,
     .pkp_nav_list ul a:focus {
         outline: 0;
-        background: #ddd;
-        border-color: #006798;
-        color: #006798
+        background: #ece2b1;
+        border-color: darkgreen;
+        color: darkgreen
     }
 
     .pkp_nav_list ul li:first-child a {
@@ -1707,23 +1721,28 @@ img {
         text-align: center
     }
 
-    .pkp_navigation_primary>li>a {
-        margin: .357rem .5em 0;
-        padding: .357rem .5em calc(.714rem - 2px);
-        border-bottom: 2px solid transparent;
-        color: white;
+    .pkp_navigation_primary > li > a {
+    position: relative;
+    background: transparent !important;
+    transition: background 0.3s, color 0.3s;
     }
 
-    .pkp_navigation_primary>li>a:hover {
-        color: #fff;
-        outline: 0;
-        border-color: #fff
+    .pkp_navigation_primary > li > a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0px; /* Ajusta la posición del subrayado */
+        width: 100%;
+        height: 2px;
+        background-color: darkgreen;
+        opacity: 0;
+        transition: opacity 0.4s;
+        pointer-events: none;
     }
 
-    .pkp_navigation_primary>li>a:focus {
-        background: #fff;
-        color: #254222;
-        outline: 0
+    .pkp_navigation_primary > li > a:hover::after,
+    .pkp_navigation_primary > li > a:focus::after {
+        opacity: 1;
     }
 
     .pkp_navigation_primary>li:first-child a {
@@ -1749,7 +1768,7 @@ img {
 
     .pkp_navigation_primary .dropdown-menu a:focus,
     .pkp_navigation_primary .dropdown-menu a:hover {
-        border-color: #006798
+        border-color: darkgreen
     }
 
     .dropdown-menu {
@@ -1780,19 +1799,25 @@ img {
     }
 
     .pkp_navigation_user {
-        text-align: right;
+        text-align: center;
         font-size: .93rem;
-        padding-right: 1.43rem
+        background-color: rgba(0, 0, 0, 0.832);
+        border-radius: 0 0 80px 80px;
+    }
+    
+    .pkp_navigation_user .profile a{
+        transition: all 0.4s;
     }
 
+    .pkp_navigation_user .profile a:hover {
+        color: darkgreen;
+        filter: brightness(200%);
+    }
+    
     .pkp_navigation_user.pkp_navigation_user {
         margin: 0;
         padding: 0;
         border: none
-    }
-
-    .pkp_navigation_user li {
-        text-align: left
     }
 
     .pkp_navigation_user a {
@@ -1868,6 +1893,22 @@ img {
         display: inline-block;
         max-width: 80%;
         text-align: left
+    }
+}
+
+@media (max-width: 991px) {
+    .pkp_navigation_primary_wrapper,
+    .pkp_navigation_user_wrapper {
+        background-color: black;
+        left: 0;
+    }
+    .pkp_site_nav_menu {
+        position: absolute !important;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        padding: .714rem;
+        z-index: 9999
     }
 }
 
@@ -2091,6 +2132,18 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     }
 }
 
+@media (max-width: 990px) {
+    .pkp_site_nav_menu {
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        background: #254222;
+        left: 0;
+        padding: .714rem;
+        z-index: 9999
+    }
+}
+
 .pkp_page_index .journals {
     margin-top: 2.143rem
 }
@@ -2169,8 +2222,30 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     margin-right: -0.714rem
 }
 
-@media (min-width: 480px) {
+@media (max-width: 570px), (max-width: 992px) {
+    body {
+        background-attachment: fixed;
+    }
 
+    .pkp_structure_head {
+        height: 50px;
+    }
+
+    .pkp_structure_content {
+        top: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pkp_structure_footer {
+        display: grid !important;
+        justify-items: center;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (min-width: 480px) {
     .pkp_page_index .homepage_image,
     .pkp_page_index .additional_content {
         margin-left: -1.43rem;
@@ -2721,6 +2796,13 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
 @media (min-width: 1200px) {
     .page_register .identity li {
         max-width: 17em
+    }
+}
+
+@media (max-width: 1199px), (min-width: 1024) {
+    #navigationPrimary {
+        margin-left: 20px;
+        width: 780px;
     }
 }
 
@@ -3593,17 +3675,6 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     clear: both
 }
 
-.obj_article_summary .cover {
-    display: block;
-    margin-bottom: 1.43rem
-}
-
-.obj_article_summary .cover img {
-    display: block;
-    max-height: 250px;
-    width: auto
-}
-
 .obj_article_summary>.title {
     font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
     font-size: 1rem;
@@ -3782,8 +3853,10 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
 
 .obj_issue_summary .cover img {
     display: block;
-    width: auto;
-    max-height: 250px
+    width: 180px;
+    min-width: 125px;
+    height: 240px;
+    min-height: 150px;
 }
 
 .obj_issue_summary .title {
@@ -3996,6 +4069,11 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     line-height: 1.785rem
 }
 
+.block_custom .content p img {
+    border-radius: 10px;
+    box-shadow: -5px 5px 2px rgb(140, 140, 140);
+}
+
 .pkp_block .content p:first-child {
     margin-top: 0
 }
@@ -4057,10 +4135,14 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
 }
 
 .pkp_structure_footer_wrapper {
-    background: #ddd
+    backdrop-filter: blur(20px);
+    background-color: black;
 }
 
 .pkp_structure_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     text-align: center
 }
 
@@ -4086,7 +4168,15 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
 .pkp_brand_footer a {
     float: right;
     display: block;
-    max-width: 150px
+    max-width: 150px;
+    position: relative;
+}
+
+.pkp_brand_footer a img {
+    min-width: 120px;
+    background-color: #F2EED8;
+    border-radius: 80px 4px 80px 4px;
+    padding: 8px;
 }
 
 body[dir="rtl"] {
