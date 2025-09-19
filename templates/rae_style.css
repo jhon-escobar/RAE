@@ -1051,9 +1051,11 @@ template {
     width: 100%;
     padding: 1.43rem;
     margin-bottom: 2.857rem;
-    background: #ddd;
-    border-left: .357rem solid #006798;
+    background: #ece2b1;
+    border-left: .357rem solid darkgreen;
+    border-radius: 5px;
     font-size: 1rem;
+    color: darkgreen;
     line-height: 1.43rem
 }
 
@@ -1086,12 +1088,12 @@ template {
 }
 
 .cmp_breadcrumbs .separator {
-    color: rgba(0, 0, 0, 0.54);
+    color: rgb(0, 154, 0);
     padding: 0 .5em
 }
 
 .cmp_breadcrumbs .current {
-    color: rgba(0, 0, 0, 0.54)
+    color: #cacaca
 }
 
 .cmp_breadcrumbs .current h1 {
@@ -1186,7 +1188,7 @@ body {
     /* background-image: url("https://img.freepik.com/fotos-premium/hojas-tropicales-sobre-fondo-negro_46250-2540.jpg"); */
     background-image: url("../IMAGES/background_image_1.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     color: white;
 }
 
@@ -2264,8 +2266,8 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
 
 .pkp_page_index .homepage_image img {
     display: block;
-    width: 100%;
-    height: auto
+    width: auto;
+    height: 70dvh;
 }
 
 @media (min-width: 992px) {
@@ -3360,6 +3362,10 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     font-weight: 400
 }
 
+.obj_article_summary .title a .subtitle {
+    color: darkcyan;
+}
+
 .obj_article_details .row {
     margin-top: 2.143rem
 }
@@ -3721,6 +3727,35 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     margin-right: 0
 }
 
+.galleys_links .obj_galley_link {
+    font-weight: bold;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.galleys_links .obj_galley_link::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -80px;
+    width: 120%;
+    height: 120%;
+    border-radius: 35%;
+    background-color: #006798;
+    color: white;
+    transition: all 0.4s;
+}
+
+.galleys_links .obj_galley_link:hover::after {
+    bottom: -5px;
+    left: -8px;
+    width: 160%;
+    height: 160%;
+    color: white;
+    z-index: -10;
+}
+
 @media (min-width: 768px) {
     .obj_article_summary .authors {
         padding-right: 5em
@@ -3857,6 +3892,8 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     min-width: 125px;
     height: 240px;
     min-height: 150px;
+    filter: brightness(80%);
+    border-radius: 5px;
 }
 
 .obj_issue_summary .title {
@@ -3867,7 +3904,7 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
 
 .obj_issue_summary .series {
     margin-bottom: .357rem;
-    color: rgba(0, 0, 0, 0.54)
+    color: #cacaca
 }
 
 .obj_issue_summary .description {
@@ -4057,7 +4094,7 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     font-size: 1.143rem;
     font-weight: 700;
     line-height: 1.43rem;
-    color: rgba(0, 0, 0, 0.54)
+    color: #cacaca
 }
 
 .pkp_block .content ul li {
@@ -4071,7 +4108,6 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
 
 .block_custom .content p img {
     border-radius: 10px;
-    box-shadow: -5px 5px 2px rgb(140, 140, 140);
 }
 
 .pkp_block .content p:first-child {
@@ -4100,13 +4136,17 @@ body.navIsOpen .siteHeader__navToggleIcon>span:last-child {
     margin-top: 1.43rem;
     font-size: .93rem;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.54)
+    color: #cacaca
 }
 
 .block_browse .has_submenu ul {
     margin-top: calc(.357rem - 1px);
     padding-top: .357rem;
     font-weight: 400
+}
+
+.block_browse .has_submenu ul li a{
+    text-shadow: 0 0 5px black;
 }
 
 .block_browse .is_sub {
